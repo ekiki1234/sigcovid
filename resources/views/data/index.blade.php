@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Dirawat</label>
-                        <input type="number" name="dirawat" class="form-control" placeholder="Jumlah Dirawat" required>
+                        <input type="number" name="rawat" class="form-control" placeholder="Jumlah Dirawat" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">meninggal</label>

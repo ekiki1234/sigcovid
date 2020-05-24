@@ -42,9 +42,9 @@ class IndexController extends Controller
         $totalPositif = Data::select(DB::raw('COALESCE(SUM(positif),0) as positif'))->where('tgl_data',$this->dateNow)->get();
         $totalDirawat = Data::select(DB::raw('COALESCE(SUM(rawat),0) as rawat'))->where('tgl_data',$this->dateNow)->get();
         $totalSembuh = Data::select(DB::raw('COALESCE(SUM(sembuh),0) as sembuh'))->where('tgl_data',$this->dateNow)->get();
-        // return $data;
         
-        return view('welcome',compact("data","totalMeninggal","totalPositif","totalDirawat","totalSembuh","tanggalSekarang"));
+        
+        return view('welcome2',compact("data","totalMeninggal","totalPositif","totalDirawat","totalSembuh","tanggalSekarang"));
     }
 
     public function search(Request $request){
@@ -63,11 +63,10 @@ class IndexController extends Controller
         }
         $totalMeninggal = Data::select(DB::raw('COALESCE(SUM(meninggal),0) as meninggal'))->where('tgl_data',$request->tanggal)->get();
         $totalPositif = Data::select(DB::raw('COALESCE(SUM(positif),0) as positif'))->where('tgl_data',$request->tanggal)->get();
-        $totalrawat = Data::select(DB::raw('COALESCE(SUM(rawat),0) as rawat'))->where('tgl_data',$request->tanggal)->get();
+        $totalDirawat = Data::select(DB::raw('COALESCE(SUM(rawat),0) as rawat'))->where('tgl_data',$request->tanggal)->get();
         $totalSembuh = Data::select(DB::raw('COALESCE(SUM(sembuh),0) as sembuh'))->where('tgl_data',$request->tanggal)->get();
-        // return $data;
         
-        return view('welcome',compact("data","totalMeninggal","totalPositif","totalrawat","totalSembuh","tanggalSekarang","tanggal"));
+        return view('welcome2',compact("data","totalMeninggal","totalPositif","totalDirawat","totalSembuh","tanggalSekarang","tanggal"));
     }
 
     public function getDataMap(Request $request){

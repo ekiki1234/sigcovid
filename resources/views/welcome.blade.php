@@ -61,7 +61,7 @@
     <!-- small box -->
     <div class="small-box bg-yellow">
       <div class="inner">
-        <h3>{{$totalDirawat[0]->dirawat}} <sup style="font-size: 20px">Org</sup></h3>
+        <h3>{{$totalDirawat[0]->rawat}} <sup style="font-size: 20px">Org</sup></h3>
 
         <p>Dirawat</p>
       </div>
@@ -159,7 +159,7 @@
               <td>{{$item->positif}}</td>
               <td>{{$item->meninggal}}</td>
               <td>{{$item->sembuh}}</td>
-              <td>{{$item->dirawat}}</td>
+              <td>{{$item->rawat}}</td>
               {{-- <td>{{$item->tanggal}}</td> --}}
             </tr>
             @endforeach

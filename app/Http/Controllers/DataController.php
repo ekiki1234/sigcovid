@@ -31,7 +31,7 @@ class DataController extends Controller
             $query->where('tgl_data','=',$this->dateNow)->where('updated_at','!=','0000-00-00 00:00:00');
         })->get();
      
-        return view('data.index', compact("kabupaten","kabupatenBelumUpdate","tanggalSekarang"));
+        return view('data.index2', compact("kabupaten","kabupatenBelumUpdate","tanggalSekarang"));
     }
 
     /**
@@ -63,7 +63,7 @@ class DataController extends Controller
         $data->meninggal = $request->meninggal;
         $data->sembuh = $request->sembuh;
         $data->rawat = $request->rawat;
-        $data->tanggal = $request->tanggal;
+        $data->tgl_data = $request->tanggal;
         $data->positif = $request->sembuh + $request->rawat + $request->meninggal;
         if($cek == 0){
             $data->save();
